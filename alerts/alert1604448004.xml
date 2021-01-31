@@ -1,0 +1,566 @@
+<!DOCTYPE HTML>
+  <!-- Inspired by Jakes Murphy, legend. -->
+
+<html lang="en-us" dir="ltr"  data-config='{"twitter":0,"plusone":0,"facebook":0,"style":"MapAlerter"}'>
+
+<head>
+        <meta property="fb:pages" content="257012461075137" />
+<meta property="fb:app_id" content="360705897661767" />
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="https://www.mapalerter.com/about/api" />
+	<meta name="keywords" content="MapAlerter, Location alerts, App Alerts, geo-location alerts, County Council Alerts, local government alerts, Carlow County Council Alerts, Wexford County Council Alerts, Limerick County Council, Roscommon County Council, Waterford City Council, Water Service Disruptions, Road Closures, Flood Warnings, Severe Weather Alerts, local planning activity, SMS Text Message, Email, Smartphone App for Android and iPhone, RSS Feed, Social Media, Council Alerts, Smartphone Alerts, Push Notification Alerts" />
+	<meta name="rights" content="MapAlerter.com || Pin Point Alerts Ltd. || www.pinpointalerts.com" />
+	<meta name="author" content="MapAlerter.com" />
+	<meta name="description" content="MapAlerter is a multi-channel alert service for Irish local authorities who wish to deliver instant alerts for specific events. MapAlerter is used by Councils to alert for Water Service Disruptions, Road Closures, Flood Warnings, Severe Weather Alerts, local planning activity and much more. Alerts are delivered by SMS Text Message, Email, Smartphone App for Android and iPhone, RSS Feed and Social Media channels such as Facebook and Twitter. MapAlerter is a free service and there is no cost to receive alerts through any channel." />
+	<meta name="generator" content="MapAlerter.com" />
+	<title>MapAlerter.com - Developer API</title>
+	<link href="/templates/yoo_katana/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+	<link href="https://www.mapalerter.com/plugins/system/modalmessages/assets/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="/media/modals/css/bootstrap.min.css?v=6.4.0.p" rel="stylesheet" type="text/css" />
+	<link href="https://www.mapalerter.com/components/com_chronoforms/css/frontforms.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">
+</style>
+	<script type="application/json" class="joomla-script-options new">{"csrf.token":"3321f141bcb25c5cc4f7ac3953ce6ca5","system.paths":{"root":"","base":""},"system.keepalive":{"interval":840000,"uri":"\/component\/ajax\/?format=json"}}</script>
+	<script src="/cache/template/jquery.min-bb97fb17.js?29074dbdba2eb214f896f74986ce1e68" type="text/javascript"></script>
+	<script src="/cache/template/jquery-noconflict-a4d1676f.js?29074dbdba2eb214f896f74986ce1e68" type="text/javascript"></script>
+	<script src="/cache/template/jquery-migrate.min-7b193d29.js?29074dbdba2eb214f896f74986ce1e68" type="text/javascript"></script>
+	<script src="/cache/template/jquery.touchSwipe.min-09dc41d9.js" type="text/javascript"></script>
+	<script src="/cache/template/jquery.colorbox-min-6942e96a.js" type="text/javascript"></script>
+	<script src="/media/modals/js/script.min.js?v=6.4.0.p" type="text/javascript"></script>
+	<script src="/cache/template/bootstrap.min-584b3afb.js?29074dbdba2eb214f896f74986ce1e68" type="text/javascript"></script>
+	<script src="/media/system/js/core.js?29074dbdba2eb214f896f74986ce1e68" type="text/javascript"></script>
+	<!--[if lt IE 9]><script src="/media/system/js/polyfill.event.js?29074dbdba2eb214f896f74986ce1e68" type="text/javascript"></script><![endif]-->
+	<script src="/media/system/js/keepalive.js?29074dbdba2eb214f896f74986ce1e68" type="text/javascript"></script>
+	<script src="/media/widgetkit/uikit2-9f464fed.js" type="text/javascript"></script>
+	<script src="/media/widgetkit/wk-scripts-098fe5de.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	jQuery.noConflict();
+					
+					jQuery(window).load(function()
+					{	
+						var w = jQuery(window);
+						var m = jQuery('#modal-messages');
+						var o = jQuery('#messages-overlay');
+						var b = jQuery('#messages-close-button');
+
+    					var heightRatio = (jQuery(window).height() != 0) ? m.outerHeight() / jQuery(window).height() : 1;
+    					var widthRatio = (jQuery(window).width() != 0) ? m.outerWidth() / jQuery(window).width() : 1;
+
+						m.css('display', 'none');
+    					m.css({position: 'fixed', margin: 0, top: (50*(1-heightRatio)) + '%', left: (50*(1-widthRatio))  + '%'});
+						m.fadeIn('fast');o.fadeIn('fast');b.click(function() { o.fadeOut('fast'); m.fadeOut('fast'); });o.click(function() { o.fadeOut('fast'); m.fadeOut('fast'); });});;
+var modals_class = 'modal_link'; var modals_disable_on_mobile = 0; var modals_mobile_max_width = 767; var modals_open_by_url = ''; var modals_defaults = { opacity: '0.8',maxWidth: '75%',maxHeight: '75%',fixed: 'true',current: '{current} / {total}',previous: 'previous',next: 'next',close: 'close',xhrError: 'This content failed to load.',imgError: 'This image failed to load.' };
+</script>
+
+<link rel="apple-touch-icon-precomposed" href="/templates/yoo_katana/apple_touch_icon.png">
+<link rel="stylesheet" href="/cache/template/theme-63a5c0d2.css">
+<script src="/cache/template/theme-95ecded4.js"></script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18510483-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body class="tm-sidebar-b-left tm-sidebars-1 tm-isblog tm-fullscreen">
+    
+        <header  data-uk-sticky="{media: 640}" >
+
+                        <div class="tm-toolbar uk-clearfix uk-hidden-small tm-block-dark">
+
+                        <div class="uk-container uk-container-center">
+            
+                
+                                <div class="uk-float-right"><div class="uk-panel"><script type="text/javascript">
+function f(o){
+  o.value=o.value.toUpperCase().replace(/([^a-zA-Z0-9])/g,"");
+}
+
+</script>
+
+
+<style>
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #edfff1;
+  opacity: 0.5; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #edfff1;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #edfff1;
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <span style="font-size:15px; font-weight:bold; color:white">Get your alerts on the free app: </span>
+
+
+<a href="https://apps.apple.com/ie/app/id732814462"><img src="/images/app_store_icon.png"></a> <a href="https://play.google.com/store/apps/details?id=com.mapalerter"><img src="/images/play_store_icon.png"></a>
+
+
+
+
+<input type="hidden" name="3321f141bcb25c5cc4f7ac3953ce6ca5" value="1" /></div></div>
+                
+                        </div>
+            
+            </div>
+            
+
+                        <nav class="tm-navbar uk-navbar">
+
+                        <div class="uk-container uk-container-center">
+            
+                                <a class="tm-logo uk-hidden-small" href="https://www.mapalerter.com">
+	<p><img src="/images/logo_map_aleter.png" alt="" /></p>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v3.2'
+    });
+  };
+
+  (function(d, s, id) {
+  var js, fjs2 = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js2 = d.createElement(s); js2.id = id;
+  js2.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+  fjs2.parentNode.insertBefore(js2, fjs2);
+}(document, 'script', 'facebook-jssdk'));</script></a>
+                
+                                <a class="tm-logo uk-visible-small" href="https://www.mapalerter.com">
+	<p><img src="/images/logo_map_aleter.png" alt="" /></p></a>
+                
+                <div class="uk-navbar-flip">
+
+                                        <ul class="uk-navbar-nav uk-hidden-small"><li><a href="/gis">View Live Map</a></li><li class="uk-parent" data-uk-dropdown="{}" aria-haspopup="true" aria-expanded="false"><a href="/updates">Latest</a><div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1"><div class="uk-grid uk-dropdown-grid"><div class="uk-width-1-1"><ul class="uk-nav uk-nav-navbar"><li><a href="/content/water">Water Disruptions</a></li><li><a href="/content/roads">Road Works</a></li><li><a href="/content/community">Community Notices</a></li><li><a href="/content/flood">Flooding</a></li><li><a href="/content/weather">Severe Weather</a></li><li><a href="/content/planning">Planning Applications</a></li></ul></div></div></div></li><li class="uk-parent" data-uk-dropdown="{}" aria-haspopup="true" aria-expanded="false"><a href="/councils-link" class="columns-2">Councils</a><div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1"><div class="uk-grid uk-dropdown-grid"><div class="uk-width-1-1"><ul class="uk-nav uk-nav-navbar"><li><a href="/content/carlow">Carlow</a></li><li><a href="/content/cork">Cork</a></li><li><a href="/content/donegal">Donegal</a></li><li><a href="/content/fingal">Fingal</a></li><li><a href="/content/limerick">Limerick</a></li><li><a href="/content/tipperary">Tipperary</a></li><li><a href="/content/waterford">Waterford</a></li><li><a href="/content/wexford">Wexford</a></li><li><a href="/content/galwaycoco">Co. Galway </a></li><li><a href="/content/roscommon">Roscommon</a></li><li><a href="/content/kerry">Kerry</a></li><li><a href="/content/kilkenny">Kilkenny</a></li><li><a href="/content/monaghan">Monaghan</a></li><li><a href="/content/kildare">Kildare</a></li><li><a href="/content/meath">Meath</a></li><li><a href="/content/clare">Clare</a></li><li><a href="/content/longford">Longford</a></li></ul></div></div></div></li><li class="uk-parent uk-active" data-uk-dropdown="{}" aria-haspopup="true" aria-expanded="false"><a href="#">About</a>
+<div class="uk-dropdown uk-dropdown-navbar uk-dropdown-width-1"><div class="uk-grid uk-dropdown-grid"><div class="uk-width-1-1"><ul class="uk-nav uk-nav-navbar"><li><a href="/about/mapalerter-app">Free Smartphone App</a></li><li><a href="/about/frequently-asked-questions">Frequently Asked Questions</a></li><li class="uk-active"><a href="/about/api">Developer API</a></li><li><a href="/about/contact">Contact</a></li></ul></div></div></div></li><li><a href="/register">Create Free Account</a></li></ul>
+
+        <ul class="uk-navbar-nav uk-hidden-small">
+            <li class="uk-parent" data-uk-dropdown>
+                <a href="#">Login</a>
+                <div class="uk-dropdown uk-dropdown-navbar">
+	<div align="left">
+				<input style="width:100% !important" type="button" value="Login" onClick="location.href='/login'"  class="uk-button uk-button-large uk-button-success" /><br /><br />
+
+				<input style="width:100% !important" type="button" value="Register Here" onClick="location.href='/register'"  class="uk-button uk-button-large uk-button-success" /><br /><br />
+
+<span style="color:white !important; text-transform: initial !important; padding-bottom:4px;">Or get the free app:</span>
+
+
+
+<div class="uk-text-left" style="padding-top: 15px;" align="center"><a href="https://apps.apple.com/ie/app/id732814462"><img src="/images/app_store_icon.png"></a> <a href="https://play.google.com/store/apps/details?id=com.mapalerter"><img src="/images/play_store_icon.png"></a>
+</div>
+
+</div>
+
+
+</div>
+            </li>
+        </ul>                    
+                                        <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+                    
+                    
+                </div>
+
+                        </div>
+            
+            </nav>
+            
+        </header>
+
+
+        
+        
+        
+        
+                <div class="tm-block tm-block-default">
+
+                <div class="uk-container uk-container-center">
+        
+            <section class="tm-middle uk-grid" data-uk-grid-match data-uk-grid-margin>
+
+                                <div class="tm-main uk-width-medium-3-4 uk-push-1-4">
+
+                    
+                                            <main class="tm-content">
+                            <div class="uk-panel uk-panel-blank">
+                                                                <div id="system-message-container">
+</div>
+<article class="uk-article" >
+
+	
+		<h1 class="uk-article-title">
+					MapAlerter Developer API			</h1>
+	
+	
+	
+	
+		
+		<div>
+		
+<p style="text-align: justify; line-height: 177% !important;"><span style="font-size: 16px;">MapAlerter includes a developer API for client Councils & external agencies who wish to reuse the data for their own applications. Access is restricted and approval is given on the basis of individual use cases.</span></p>
+
+<p style="text-align: justify; line-height: 177% !important;"><span style="font-size: 16px;">Alert Data is available through REST end points as JSON or XML and requests include the following information:
+<ul>
+<li>Alert Title</li>
+<li>SMS Content</li>
+<li>Email Content</li>
+<li>Centre Point as Latitude-Longitude</li>
+<li>Boundaries as Lat-Lng coordinate strings</li>
+<li>Metadata: Council/Sender, Send Date, Alert Category, Alert URL</li>
+</ul>
+
+</span></p>
+
+<p style="text-align: justify; line-height: 177% !important;"><span style="font-size: 16px;">Contact <span id="cloakcc6d7263191c6b4cf267c5408f44cf64">This email address is being protected from spambots. You need JavaScript enabled to view it.</span><script type='text/javascript'>
+				document.getElementById('cloakcc6d7263191c6b4cf267c5408f44cf64').innerHTML = '';
+				var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+				var path = 'hr' + 'ef' + '=';
+				var addycc6d7263191c6b4cf267c5408f44cf64 = 'm&#97;p&#97;l&#101;rt&#101;r.&#97;p&#105;' + '&#64;';
+				addycc6d7263191c6b4cf267c5408f44cf64 = addycc6d7263191c6b4cf267c5408f44cf64 + 'p&#105;np&#111;&#105;nt&#97;l&#101;rts' + '&#46;' + 'c&#111;m';
+				var addy_textcc6d7263191c6b4cf267c5408f44cf64 = 'm&#97;p&#97;l&#101;rt&#101;r.&#97;p&#105;' + '&#64;' + 'p&#105;np&#111;&#105;nt&#97;l&#101;rts' + '&#46;' + 'c&#111;m';document.getElementById('cloakcc6d7263191c6b4cf267c5408f44cf64').innerHTML += '<a ' + path + '\'' + prefix + ':' + addycc6d7263191c6b4cf267c5408f44cf64 + '\'>'+addy_textcc6d7263191c6b4cf267c5408f44cf64+'<\/a>';
+		</script> with your suggested use case if you require access.</span></p>
+
+	</div>
+	
+	
+	
+	
+	
+	
+</article>                            </div>
+                        </main>
+                    
+                    
+                </div>
+                
+                                                                                    <aside class="tm-sidebar-b uk-width-medium-1-4 uk-pull-3-4"><div class="uk-panel uk-panel-box"><h3 class="uk-panel-title">@MapAlerter</h3>
+
+<div id="wk-gridfc6" class="uk-grid-width-1-1 uk-grid uk-grid-match uk-text-left " data-uk-grid-match="{target:'> div > .uk-panel', row:true}" data-uk-grid-margin >
+
+
+    <div>
+        <div class="uk-panel">
+
+            
+            
+            
+            
+            
+                        <p class="uk-article-meta">Written on <time datetime="03-11-2020 20:12:46 +0000">Tuesday, 03 November 2020</time></p>
+            
+            
+                        <div class="uk-margin">🚦 <a href="https://twitter.com/hashtag/Wexford">#Wexford</a>: Resurfacing works at junction of Spring Valley ,Armstrong's Range ,The Shannon .Wed 4th and Thur 5th. F… <a href="https://twitter.com/i/web/status/1323719791643951105">twitter.com/i/web/status/1…</a></div>
+            
+            
+                        <p><a class="uk-button" href="https://twitter.com/MapAlerter/status/1323719791643951105">Read more</a></p>
+            
+            
+        </div>
+    </div>
+
+
+    <div>
+        <div class="uk-panel">
+
+            
+            
+            
+            
+            
+                        <p class="uk-article-meta">Written on <time datetime="03-11-2020 19:07:46 +0000">Tuesday, 03 November 2020</time></p>
+            
+            
+                        <div class="uk-margin">🚱 <a href="https://twitter.com/hashtag/Wexford">#Wexford</a>: Due to urgent conservation reasons,there will be disruption to Water Supply tonight from 10pm-5am In En… <a href="https://twitter.com/i/web/status/1323703433489190913">twitter.com/i/web/status/1…</a></div>
+            
+            
+                        <p><a class="uk-button" href="https://twitter.com/MapAlerter/status/1323703433489190913">Read more</a></p>
+            
+            
+        </div>
+    </div>
+
+
+    <div>
+        <div class="uk-panel">
+
+            
+            
+            
+            
+            
+                        <p class="uk-article-meta">Written on <time datetime="03-11-2020 16:57:46 +0000">Tuesday, 03 November 2020</time></p>
+            
+            
+                        <div class="uk-margin">🚦 <a href="https://twitter.com/hashtag/Waterford">#Waterford</a>: Section of L4049 closed at Kilronan, Butlerstown on 4/11 to facilitate road surfacing works. Diversio… <a href="https://twitter.com/i/web/status/1323670718685581313">twitter.com/i/web/status/1…</a></div>
+            
+            
+                        <p><a class="uk-button" href="https://twitter.com/MapAlerter/status/1323670718685581313">Read more</a></p>
+            
+            
+        </div>
+    </div>
+
+
+    <div>
+        <div class="uk-panel">
+
+            
+            
+            
+            
+            
+                        <p class="uk-article-meta">Written on <time datetime="03-11-2020 16:37:46 +0000">Tuesday, 03 November 2020</time></p>
+            
+            
+                        <div class="uk-margin">🚱 <a href="https://twitter.com/hashtag/Wexford">#Wexford</a>: Due to emergency leak detection works, customers in The Still/Cherryorchard area of Enniscorthy may exp… <a href="https://twitter.com/i/web/status/1323665685780828162">twitter.com/i/web/status/1…</a></div>
+            
+            
+                        <p><a class="uk-button" href="https://twitter.com/MapAlerter/status/1323665685780828162">Read more</a></p>
+            
+            
+        </div>
+    </div>
+
+
+    <div>
+        <div class="uk-panel">
+
+            
+            
+            
+            
+            
+                        <p class="uk-article-meta">Written on <time datetime="03-11-2020 16:07:46 +0000">Tuesday, 03 November 2020</time></p>
+            
+            
+                        <div class="uk-margin">🚦 <a href="https://twitter.com/hashtag/Waterford">#Waterford</a>: Stop-Go system in place along the N25 at Killossera , Spring, Dungarvan on 4th/5th , 6th Nov, 2020 to… <a href="https://twitter.com/i/web/status/1323658135257665536">twitter.com/i/web/status/1…</a></div>
+            
+            
+                        <p><a class="uk-button" href="https://twitter.com/MapAlerter/status/1323658135257665536">Read more</a></p>
+            
+            
+        </div>
+    </div>
+
+
+    <div>
+        <div class="uk-panel">
+
+            
+            
+            
+            
+            
+                        <p class="uk-article-meta">Written on <time datetime="03-11-2020 15:57:46 +0000">Tuesday, 03 November 2020</time></p>
+            
+            
+                        <div class="uk-margin">🚰 <a href="https://twitter.com/hashtag/Kildare">#Kildare</a>: Repairs to a burst watermain will be carried out on Main Street, Castledermot tomorrow Wednesday 4th No… <a href="https://twitter.com/i/web/status/1323655618658476034">twitter.com/i/web/status/1…</a></div>
+            
+            
+                        <p><a class="uk-button" href="https://twitter.com/MapAlerter/status/1323655618658476034">Read more</a></p>
+            
+            
+        </div>
+    </div>
+
+
+    <div>
+        <div class="uk-panel">
+
+            
+            
+            
+            
+            
+                        <p class="uk-article-meta">Written on <time datetime="03-11-2020 15:04:23 +0000">Tuesday, 03 November 2020</time></p>
+            
+            
+                        <div class="uk-margin">Please note revised public display arrangements relating to the Draft Wexford County Development Plan  see… <a href="https://twitter.com/i/web/status/1323642182318915584">twitter.com/i/web/status/1…</a></div>
+            
+            
+                        <p><a class="uk-button" href="https://twitter.com/MapAlerter/status/1323642182318915584">Read more</a></p>
+            
+            
+        </div>
+    </div>
+
+
+    <div>
+        <div class="uk-panel">
+
+            
+            
+            
+            
+            
+                        <p class="uk-article-meta">Written on <time datetime="03-11-2020 14:52:46 +0000">Tuesday, 03 November 2020</time></p>
+            
+            
+                        <div class="uk-margin">🏠 <a href="https://twitter.com/hashtag/Wexford">#Wexford</a>: Please note revised public display arrangements relating to the Draft Wexford County Development Plan –… <a href="https://twitter.com/i/web/status/1323639261963407373">twitter.com/i/web/status/1…</a></div>
+            
+            
+                        <p><a class="uk-button" href="https://twitter.com/MapAlerter/status/1323639261963407373">Read more</a></p>
+            
+            
+        </div>
+    </div>
+
+
+</div>
+
+<script>
+(function($){
+
+    // get the images of the gallery and replace it by a canvas of the same size to fix the problem with overlapping images on load.
+    $('img[width][height]:not(.uk-overlay-panel)', $('#wk-gridfc6')).each(function() {
+
+        var $img = $(this);
+
+        if (this.width == 'auto' || this.height == 'auto' || !$img.is(':visible')) {
+            return;
+        }
+
+        var $canvas = $('<canvas class="uk-responsive-width"></canvas>').attr({width:$img.attr('width'), height:$img.attr('height')}),
+            img = new Image,
+            release = function() {
+                $canvas.remove();
+                $img.css('display', '');
+                release = function(){};
+            };
+
+        $img.css('display', 'none').after($canvas);
+
+        $(img).on('load', function(){ release(); });
+        setTimeout(function(){ release(); }, 1000);
+
+        img.src = this.src;
+
+    });
+
+})(jQuery);
+</script>
+</div>
+<div class="uk-panel uk-panel-box">
+<form class="uk-form" action="/about/api" method="post">
+
+		<div class="uk-form-row">
+		<div align="center" /><a href="/register" class="uk-button uk-button-success" style="color: white !important; width: 150px;">Register</a> <BR /><BR />	</div>
+	
+	<div class="uk-form-row">
+		<input class="uk-width-1-1" type="text" name="username" size="18" placeholder="Username">
+	</div>
+
+	<div class="uk-form-row">
+		<input class="uk-width-1-1" type="password" name="password" size="18" placeholder="Password">
+	</div>
+
+	
+		<div class="uk-form-row">
+				<label for="modlgn-remember-1105046970">Remember Me</label>
+		<input id="modlgn-remember-1105046970" type="checkbox" name="remember" value="yes" checked>
+	</div>
+		
+	<div class="uk-form-row">
+		<button style="width:150px !important; color: white !important;" class="uk-button uk-button-success" value="Log in" name="Submit" type="submit">Log in</button>
+	</div>
+
+	<ul class="uk-list uk-margin-bottom-remove">
+		<li><a href="/reset-password">Forgot your password?</a></li>
+		<li><a href="/component/users/?view=remind&amp;Itemid=101">Forgot your username?</a></li>
+					</ul>
+	
+		
+	<input type="hidden" name="option" value="com_users">
+	<input type="hidden" name="task" value="user.login">
+	<input type="hidden" name="return" value="aHR0cHM6Ly93d3cubWFwYWxlcnRlci5jb20vYWJvdXQvYXBp">
+	<input type="hidden" name="3321f141bcb25c5cc4f7ac3953ce6ca5" value="1" /></form>
+</div></aside>
+                                
+            </section>
+
+                </div>
+        
+        </div>
+        
+        
+        
+        
+        
+                    <div class="uk-text-center uk-margin-bottom-large tm-block tm-block-full-width tm-block-primary">
+
+                                <div class="uk-container uk-container-center">
+                
+                <section>
+                    <footer class="tm-footer">
+
+                                                <a class="tm-totop-scroller" data-uk-smooth-scroll href="#"></a>
+                        
+                        <div class="uk-panel">
+	© All data published on MapAlerter.com is subject to copyright and may not be reproduced on any other website without the prior consent of site owners. <BR>
+<a style="text-decoration:underline" href="/terms-and-conditions?ml=1" class="modal modal_link" data-modal-class-name="no_title">Terms & Conditions for Registered Users</a> //  <a style="text-decoration:underline" href="/privacy?ml=1" class="modal modal_link" data-modal-class-name="no_title">MapAlerter Privacy Statement</a> // <a style="text-decoration:underline" href="/unsubscribe">Unsubscribe</a> // <a style="text-decoration:underline" href="https://apps.apple.com/ie/app/id732814462">iPhone App</a> // <a style="text-decoration:underline" href="https://play.google.com/store/apps/details?id=com.mapalerter">Android App</a>.
+<ul class="uk-list ocm-social" style="border:0">
+<li><a href="https://twitter.com/mapalerter" target="_blank"><em style="color:white !important" class="uk-icon-twitter"></em></a></li>
+<li><a href="https://www.facebook.com/mapalerterie" target="_blank"><em style="color:white !important" class="uk-icon-facebook"></em></a></li>
+
+</ul>
+</div>
+                        <!-- Twitter universal website tag code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','nz276');
+twq('track','PageView');
+</script>
+<!-- End Twitter universal website tag code -->
+                    </footer>
+                </section>
+
+                                </div>
+                
+            </div>
+        
+
+
+    
+        <div id="offcanvas" class="uk-offcanvas">
+        <div class="uk-offcanvas-bar uk-offcanvas-bar-flip"><div class="uk-panel ocm-flip"><h3 class="uk-panel-title">Account</h3>
+	<div align="left">
+				<input style="width:100% !important" type="button" value="Login" onClick="location.href='/login'"  class="uk-button uk-button-large uk-button-success" /><br /><br />
+
+				<input style="width:100% !important" type="button" value="Register Here" onClick="location.href='/register'"  class="uk-button uk-button-large uk-button-success" /><br /><br />
+
+</div>
+
+
+
+
+<div class="uk-text-left" style="padding-top: 15px;" align="center"><a href="https://apps.apple.com/ie/app/id732814462"><img src="/images/app_store_icon.png"></a> <a href="https://play.google.com/store/apps/details?id=com.mapalerter"><img src="/images/play_store_icon.png"></a>
+</div></div>
+<ul class="uk-nav uk-nav-offcanvas"><li><a href="/gis">View Live Map</a></li><li class="uk-parent"><a href="/updates">Latest</a><ul class="uk-nav-sub"><li><a href="/content/water">Water Disruptions</a></li><li><a href="/content/roads">Road Works</a></li><li><a href="/content/community">Community Notices</a></li><li><a href="/content/flood">Flooding</a></li><li><a href="/content/weather">Severe Weather</a></li><li><a href="/content/planning">Planning Applications</a></li></ul></li><li class="uk-parent"><a href="/councils-link" class="columns-2">Councils</a><ul class="uk-nav-sub"><li><a href="/content/carlow">Carlow</a></li><li><a href="/content/cork">Cork</a></li><li><a href="/content/donegal">Donegal</a></li><li><a href="/content/fingal">Fingal</a></li><li><a href="/content/limerick">Limerick</a></li><li><a href="/content/tipperary">Tipperary</a></li><li><a href="/content/waterford">Waterford</a></li><li><a href="/content/wexford">Wexford</a></li><li><a href="/content/galwaycoco">Co. Galway </a></li><li><a href="/content/roscommon">Roscommon</a></li><li><a href="/content/kerry">Kerry</a></li><li><a href="/content/kilkenny">Kilkenny</a></li><li><a href="/content/monaghan">Monaghan</a></li><li><a href="/content/kildare">Kildare</a></li><li><a href="/content/meath">Meath</a></li><li><a href="/content/clare">Clare</a></li><li><a href="/content/longford">Longford</a></li></ul></li><li class="uk-parent uk-active"><a href="#">About</a>
+<ul class="uk-nav-sub"><li><a href="/about/mapalerter-app">Free Smartphone App</a></li><li><a href="/about/frequently-asked-questions">Frequently Asked Questions</a></li><li class="uk-active"><a href="/about/api">Developer API</a></li><li><a href="/about/contact">Contact</a></li></ul></li><li><a href="/register">Create Free Account</a></li></ul></div>
+    </div>
+    
+</body>
+</html>
